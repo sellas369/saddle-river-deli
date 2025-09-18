@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { readFileSync } from 'fs';
+import { parse as parseCSV } from 'csv-parse/sync';
+import Menuboard from '../components/Menuboard.svelte';
+
+const currency = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+}).format;
+
+interface MenuItem {
+  item: string;
+  regular?: string | false;
+  large?: string | false;
+  section: string;
+}
+
+const menu = parseCSV(readFileSync('src/data/menu.csv', 'utf-8'), {
+  columns: true,
+  skip_empty_lines: true,
+}).map((m) => {
+  if (m.regular !== '') {
+    m.regular = currency(m.regular);
+  } else {
+    m.regular = false;
+  }
+
+  if (m.large !== '') {
+    m.large = currency(m.large);
+  } else {
+    m.large = false;
+  }
+
+  return m;
+}) as MenuItem[];
+
+// console.log(menu);
+
+const breakfast = [
+  {
+    title: 'Breakfast Sandwiches',
+    items: menu.filter((m) => m.section === 'breakfast sandwiches'),
+  },
+  {
+    title: 'Spreads on a Bagel or Round Roll',
+    items: menu.filter((m) => m.section === 'spreads'),
+  },
+  {
+    title: 'Egg Platters',
+    description:
+      'All Egg Platters Served with Two JUMBO Fresh Eggs, Home Fries & Buttered Toast',
+    items: menu.filter((m) => m.section === 'egg platters'),
+  },
+  {
+    title: 'Omelettes',
+    items: menu.filter((m) => m.section === 'omelettes'),
+  },
+  {
+    title: 'Pancakes & French Toast',
+    items: menu.filter((m) => m.section === 'pancakes french toast'),
+  },
+];
+
+const sandwiches = [
+  {
+    title: 'Hot Heroes',
+    items: menu.filter((m) => m.section === 'hot heroes'),
+  },
+  {
+    title: 'Deli Sandwiches',
+    description: 'Add Tomato, Cheese, Jalapeño or Banana Peppers ($0.50 each)',
+    items: menu.filter((m) => m.section === 'deli sandwiches'),
+    regular: 'Sandwich',
+    large: 'Hero',
+  },
+  {
+    title: 'Specialty Sandwiches',
+    description: 'Add Tomato, Cheese, Jalapeño or Banana Peppers ($0.50 each)',
+    items: menu.filter((m) => m.section === 'specialty sandwiches'),
+    regular: 'Sandwich',
+    large: 'Hero',
+  },
+  {
+    title: 'Wraps',
+    items: menu.filter((m) => m.section === 'wraps'),
+  },
+  {
+    title: 'Paninis',
+    items: menu.filter((m) => m.section === 'paninis'),
+  },
+  {
+    title: 'Baskets Baskets Baskets',
+    items: menu.filter((m) => m.section === 'baskets'),
+  },
+  {
+    title: 'From The Grill',
+    description: 'Make it DELUXE with fries for $2.00',
+    items: menu.filter((m) => m.section === 'grill'),
+  },
+  {
+    title: 'Goodies & Add-Ons',
+    items: menu.filter((m) => m.section === 'addons'),
+  },
+];
+
+const salads = [
+  {
+    title: 'Specialty Salads',
+    items: menu.filter((m) => m.section === 'salads'),
+  },
+];
+
+const deli = [
+  {
+    title: 'Fresh Cold Cuts',
+    items: menu.filter((m) => m.section === 'deli'),
+    regular: '½ lb',
+  },
+  {
+    title: 'Delicious, Fresh Cheeses',
+    items: menu.filter((m) => m.section === 'cheese'),
+    regular: '½ lb',
+  },
+];
+
+// console.log(breakfast);
+
+// const menu = file('src/data/menu.csv', {
+//     parser: text => parseCSV(text, {
+//       columns: true,
+//       skip_empty_lines: true
+//     })
+//   })
+---
+
+<Layout>
+  <article>
+    <Menuboard items={breakfast} />
+    <Menuboard items={sandwiches} />
+    <Menuboard items={salads} />
+    <Menuboard items={deli} group={true} />
+  </article>
+</Layout>
+
+<style lang="scss">
+  .type {
+    margin: 1rem;
+    max-width: 80ch;
+  }
+
+  article {
+    @supports (display: masonry) {
+      display: masonry;
+      gap: 2rem;
+      // display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr));
+    }
+    padding: 2rem;
+  }
+</style>

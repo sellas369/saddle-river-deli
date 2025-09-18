@@ -1,0 +1,26 @@
+@font-face {
+  font-family: SignikaNegative;
+  src: url('/fonts/Signika_Negative/SignikaNegative-VariableFont_wght.ttf');
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: SignikaNegative;
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: 'hlig', 'liga', 'clig';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  font-family: Arial, Helvetica, sans-serif;
+}

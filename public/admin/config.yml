@@ -1,0 +1,105 @@
+# Backend configuration for the CMS. Any backend will also support working with your repository locally by choosing it at the login screen.
+backend:
+  # The backend to use
+  name: github
+  # The branch to commit to. Cannot be protected
+  branch: main
+  # The repository from your backend to work from
+  repo: snugug/saddle-river-deli
+  # The domain your site is hosted on, without protocol
+  site_domain: saddlerivergourmet.com
+  # The full base URL of your site, including protocol and subpath
+  base_url: https://www.saddlerivergourmet.com/
+  # The OAuth route to use for authentication. GitHub requires a backend server, or you can authenticate with a Personal Access Token directly in browser
+  auth_endpoint: oauth
+
+# The source URL to store CMS uploaded media
+media_folder: public/media
+# The folder where media will be served from. If your site is served from a subpath, it must be included here.
+public_folder: /media
+
+# Content collections
+collections:
+  - label: Menu
+    name: menu
+    folder: src/content/menu
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        required: false
+      - label: Labeling
+        hint: How regular and large sizes should be labeled
+        name: labeling
+        widget: object
+        summary: 'Regular: {{fields.regular}} / Large: {{fields.large}}'
+        required: false
+        fields:
+          - label: Regular
+            name: regular
+            widget: string
+            required: false
+          - label: Large
+            name: large
+            widget: string
+            required: false
+      - label: Items
+        name: items
+        widget: list
+        fields:
+          - label: Name
+            name: name
+            widget: string
+          - label: Regular Cost
+            name: regular
+            widget: number
+            min: 0
+            step: .01
+            value_type: float
+            required: false
+          - label: Large Cost
+            name: large
+            widget: number
+            min: 0
+            step: .01
+            value_type: float
+            required: false
+  - label: Regular Menu
+    name: menuorder
+    folder: src/content/menuorder
+    create: true
+    fields:
+      - label: Title
+        name: title
+      - label: Board
+        name: board
+        widget: list
+        field:
+          label: Menu Board
+          name: menu
+          widget: relation
+          collection: menu
+          value_field: title
+          search_fields:
+            - title
+  - label: Catering Menu
+    name: cateringorder
+    folder: src/content/cateringorder
+    create: true
+    fields:
+      - label: Title
+        name: title
+      - label: Board
+        name: board
+        widget: list
+        field:
+          label: Menu Board
+          name: menu
+          widget: relation
+          collection: catering
+          value_field: title
+          search_fields:
+            - title

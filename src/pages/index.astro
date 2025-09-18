@@ -1,11 +1,99 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <nav>
+    <ul>
+      <li><a href="/menu">Pickup & Delivery Menu</a></li>
+      <li><a href="/catering">Catering Menu</a></li>
+    </ul>
+  </nav>
+  <!-- <article class='type'>
+    <p>
+      Welcome to the <strong>Saddle River Deli</strong>, your neighborhood
+      destination for delicious food conveniently located in the heart of Saddle
+      River, NJ.
+    </p>
+    <p>
+      Whether you're looking for a quick and satisfying meal or planning an
+      event for a crowd, we've got you covered. Stop by to try our daily hot and
+      cold specials, call ahead at <a href='tel:+12013278578'>201-327-8578</a> or
+      <a href='tel:+12013270015'>201-327-0015</a> for easy pickup, or let us deliver
+      right to your door ($25 minimum). We're open Monday - Saturday <time
+        datetime='06:00'>6:00am</time
+      >-<time datetime='15:00'>3:00pm</time>, so you can start your day off
+      right with a filling breakfast or power through the afternoon with our
+      fresh hot and cold sandwiches, wraps, paninis, salads, and sides.
+    </p>
+    <p>
+      We also specialize in making your next event a success. We cater to groups
+      of all sizes, from intimate gatherings to large-scale events like
+      graduations, confirmations, and even weddings! Our professional catering
+      team is ready to help you craft the perfect menu to impress your guests.
+      We also welcome corporate accounts, making it simple and convenient for
+      businesses to provide delicious meals for meetings, luncheons, dinners,
+      and more.
+    </p>
+    <p>
+      Come experience the <strong>Saddle River Deli</strong> difference, where it's
+      always a "Good Time" to eat!
+    </p>
+  </article> -->
 </Layout>
+
+<style lang="scss">
+  .type {
+    margin-block: 2rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    max-width: 80ch;
+  }
+
+  nav {
+    margin: 0;
+    width: 100%;
+    // background-color: blue;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    li {
+      width: 50%;
+      list-style: none;
+      text-align: center;
+      color: white;
+      display: grid;
+      width: 100%;
+    }
+
+    a {
+      --base: #0c7f00;
+      padding: 1rem;
+      text-decoration: none;
+      color: white;
+      background-color: color-mix(in srgb, var(--base), black 25%);
+      border: 1px solid rgb(black, 0.5);
+      font-size: 1.15rem;
+      height: 100%;
+      display: grid;
+      align-items: center;
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--base), black 50%);
+      }
+      &:active {
+        background-color: color-mix(in srgb, var(--base), black 15%);
+      }
+    }
+  }
+
+  // strong {
+  //   weight: 500;
+  // }
+</style>
