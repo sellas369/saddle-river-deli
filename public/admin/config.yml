@@ -5,7 +5,7 @@ backend:
   # The branch to commit to. Cannot be protected
   branch: main
   # The repository from your backend to work from
-  repo: snugug/saddle-river-deli
+  repo: sellas369/saddle-river-deli
   # The domain your site is hosted on, without protocol
   site_domain: saddlerivergourmet.com
   # The full base URL of your site, including protocol and subpath
