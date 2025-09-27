@@ -1,9 +1,12 @@
 [aria-label='“Items” Field'] .item-body,
-[aria-label='“Labeling” Field'] .item-list {
+[aria-label='“Labeling” Field'] .item-list,
+[aria-label='“Serving” Field'] .item-list,
+[aria-label='“Extra” Field'] .item-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-[aria-label='“Name” Field'] {
+[aria-label='“Name” Field'],
+[aria-label='“Is a platter” Field'] {
   grid-column: 1 / span 2;
 }

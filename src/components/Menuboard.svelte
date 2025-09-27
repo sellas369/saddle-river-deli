@@ -16,10 +16,16 @@
   const { title, board: items } = item;
   const group = true;
 
-  const currency = new Intl.NumberFormat('en-US', {
+  const currencyIntl = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   }).format;
+
+  const currency = (p) => {
+    if (p) return currencyIntl(p);
+
+    return 'M/P';
+  };
 
   // items = items.map((item) => {
   //   const hasRegular = item.items.find((i) => i.regular !== false);

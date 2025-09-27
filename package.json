@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/svelte": "^7.1.0",
-    "@sveltia/cms": "^0.105.6",
+    "@sveltia/cms": "^0.107.2",
     "astro": "^5.13.5",
     "svelte": "^5.38.7",
     "typescript": "^5.9.2"

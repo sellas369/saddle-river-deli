@@ -33,4 +33,3 @@ items:
     regular: 4.49
     large: null
 ---
-
