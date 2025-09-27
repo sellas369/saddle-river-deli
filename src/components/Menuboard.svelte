@@ -1,14 +1,34 @@
-<script>
-  let { title, items, group = false } = $props();
+<script lang="ts">
+  import type { CollectionEntry } from 'astro:content';
+  type MenuboardSchema = CollectionEntry<'menuboard'>['data'];
+  type MenuSchema = CollectionEntry<'menu'>['data'];
 
-  items = items.map((item) => {
-    const hasRegular = item.items.find((i) => i.regular !== false);
-    const hasLarge = item.items.find((i) => i.large !== false);
+  interface Menuboard extends MenuboardSchema {
+    board: Array<
+      MenuSchema & {
+        double: boolean;
+      }
+    >;
+  }
 
-    item.double = hasRegular !== undefined && hasLarge !== undefined;
+  let { item }: { item: Menuboard } = $props();
 
-    return item;
-  });
+  const { title, board: items } = item;
+  const group = true;
+
+  const currency = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format;
+
+  // items = items.map((item) => {
+  //   const hasRegular = item.items.find((i) => i.regular !== false);
+  //   const hasLarge = item.items.find((i) => i.large !== false);
+
+  //   item.double = hasRegular !== undefined && hasLarge !== undefined;
+
+  //   return item;
+  // });
 </script>
 
 <section class={['container', group ? 'grouped' : '']}>
@@ -22,41 +42,38 @@
           {/if}
         </div>
       </caption>
-      {#if !item.double}
-        {#if item.regular}
-          <thead>
-            <tr>
-              <td></td>
-              <th class="cost">{item.regular}</th>
-            </tr>
-          </thead>
-        {/if}
-        <tbody>
-          {#each item.items as i}
-            <tr>
-              <td>{i.item}</td>
-              <td class="cost">{i.regular}</td>
-            </tr>
-          {/each}
-        </tbody>
-      {:else}
+      {#if item.labeling}
         <thead>
           <tr>
             <td></td>
-            <th class="cost">{item.regular}</th>
-            <th class="cost">{item.large}</th>
+            <th class="cost">{item.labeling.regular}</th>
+            {#if item.double}
+              <th class="cost">{item.labeling.large}</th>
+            {/if}
           </tr>
         </thead>
-        <tbody>
-          {#each item.items as i}
-            <tr>
-              <td>{i.item}</td>
-              <td class="cost">{i.regular || '-'}</td>
-              <td class="cost">{i.large || '-'}</td>
-            </tr>
-          {/each}
-        </tbody>
       {/if}
+      <tbody>
+        {#each item.items as i}
+          <tr>
+            <td>{i.name}</td>
+            {#if item.double}
+              {#if i.regular && !i.large}
+                <td class="cost">{currency(i.regular)}</td>
+                <td class="cost">-</td>
+              {:else if i.large && !i.regular}
+                <td class="cost">-</td>
+                <td class="cost">{currency(i.large)}</td>
+              {:else}
+                <td class="cost">{currency(i.regular)}</td>
+                <td class="cost">{currency(i.large)}</td>
+              {/if}
+            {:else}
+              <td class="cost">{currency(i.regular)}</td>
+            {/if}
+          </tr>
+        {/each}
+      </tbody>
     </table>
   {/each}
 </section>

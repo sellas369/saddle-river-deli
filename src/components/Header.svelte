@@ -1,7 +1,10 @@
 <div class="top-wrapper">
   <header>
-    <h1><a href="/">Saddle River Restaurant, Deli, & Catering</a></h1>
-    <!-- <h2>Eat In, Take Out, Delivery, & Catering</h2> -->
+    <div class="title">
+      <h1><a href="/">Saddle River Deli</a></h1>
+      <p>Eat In | Take Out | Delivery | Catering</p>
+    </div>
+
     <footer>
       <address>
         <p>
@@ -57,9 +60,36 @@
       </p>
     </footer>
   </header>
+  <nav>
+    <ul>
+      <li><a href="/menu">Pickup & Delivery Menu</a></li>
+      <li><a href="/catering">Catering Menu</a></li>
+    </ul>
+  </nav>
 </div>
 
 <style lang="scss">
+  .title {
+    text-align: center;
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    p {
+      font-size: 1.25rem;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  footer {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 80ch;
+    margin: 0 auto;
+  }
+
   .top-wrapper {
     display: grid;
     background: #0c7f00;
@@ -68,7 +98,7 @@
     padding: 1rem;
     color: white;
     display: grid;
-    gap: 0.5rem;
+    gap: 2rem;
   }
 
   a {
@@ -76,11 +106,14 @@
   }
 
   h1 {
+    --tt: var(--on);
     margin: 0;
-    margin-block-end: 1rem;
-    font-size: 3rem;
+    line-height: 1;
+    padding: 0;
+    font-size: 2.85rem;
     font-style: italic;
     text-align: center;
+    animation-name: header-h1;
     text-shadow:
       1px 1px black,
       2px 2px black,
@@ -98,17 +131,27 @@
     }
   }
 
+  @keyframes header-h1 {
+    from {
+      font-size: 1.25rem;
+    }
+    to {
+      font-size: 3.5rem;
+    }
+  }
+
   p {
     margin: 0;
     text-shadow: 1px 1px black;
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   address {
     font-style: normal;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
+    // gap: 1rem;
   }
 
   .icon {
@@ -134,12 +177,13 @@
     }
   }
 
-  .hours {
-    margin-top: 1rem;
-  }
+  // .hours {
+  //   margin-top: 1rem;
+  // }
 
   nav {
     margin: 0;
+    margin-block-start: 1rem;
     // background-color: blue;
 
     ul {

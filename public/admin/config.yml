@@ -20,10 +20,12 @@ public_folder: /media
 
 # Content collections
 collections:
-  - label: Menu
+  - label: Menus
     name: menu
     folder: src/content/menu
     create: true
+    sortable_fields:
+      - title
     fields:
       - label: Title
         name: title
@@ -67,13 +69,20 @@ collections:
             step: .01
             value_type: float
             required: false
-  - label: Regular Menu
-    name: menuorder
-    folder: src/content/menuorder
+  - label: Menu Boards
+    name: menuboard
+    folder: src/content/menuboard
     create: true
+    sortable_fields:
+      - weight
     fields:
       - label: Title
         name: title
+      - label: Weight
+        name: weight
+        widget: number
+        value_type: int
+        default: 0
       - label: Board
         name: board
         widget: list
@@ -82,7 +91,9 @@ collections:
           name: menu
           widget: relation
           collection: menu
-          value_field: title
+          value_field: '{{slug}}'
+          display_fields:
+            - title
           search_fields:
             - title
   - label: Catering Menu
@@ -100,6 +111,6 @@ collections:
           name: menu
           widget: relation
           collection: catering
-          value_field: title
+          value_field: '{{slug}}'
           search_fields:
             - title

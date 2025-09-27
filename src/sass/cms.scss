@@ -1,0 +1,9 @@
+[aria-label='“Items” Field'] .item-body,
+[aria-label='“Labeling” Field'] .item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+[aria-label='“Name” Field'] {
+  grid-column: 1 / span 2;
+}
