@@ -205,3 +205,53 @@ collections:
             field:
               label: Item
               widget: string
+  - label: Stand-Alone Pages
+    name: pages
+    folder: src/content/pages
+    create: false
+    fields:
+      - label: Title
+        name: title
+      - label: Description
+        name: body
+        widget: markdown
+  - label: Site Config
+    name: config
+    folder: src/content/config
+    create: false
+    fields:
+      - label: Title
+        name: title
+      - label: Subtitle
+        name: subtitle
+      - label: Address
+        name: address
+      - label: Phone Number
+        name: phone
+        widget: list
+        field:
+          label: Number
+          name: number
+          pattern:
+            - '^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$'
+            - Must be a phone number
+      - label: Hours
+        name: hours
+        widget: object
+        fields:
+          - label: Open Days
+            name: open
+          - label: Start Hour
+            name: start
+            widget: datetime
+            date_format: false
+            time_format: 'HH:mm'
+            picker_utc: false
+          - label: End Hour
+            name: end
+            widget: datetime
+            date_format: false
+            time_format: 'HH:mm'
+            picker_utc: false
+          - label: Closed Days
+            name: closed

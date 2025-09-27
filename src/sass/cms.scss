@@ -6,6 +6,11 @@
   grid-template-columns: 1fr 1fr;
 }
 
+[aria-label='“Hours” Field'] .item-list {
+  display: grid;
+  grid-template-columns: auto 25ch 25ch;
+}
+
 [aria-label='“Name” Field'],
 [aria-label='“Is a platter” Field'] {
   grid-column: 1 / span 2;

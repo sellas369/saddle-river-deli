@@ -89,25 +89,11 @@
     width: 100%;
     max-width: 80ch;
     margin-inline: auto;
-
-    &.grouped {
-      display: grid;
-      gap: 2rem;
-    }
-
-    @supports not (display: masonry) {
-      display: grid;
-      gap: 2rem;
-      margin-block: 1rem;
-      border: 0.5rem solid red;
-      padding: 0.5rem;
-    }
-
-    &:not(.grouped) {
-      @supports (display: masonry) {
-        display: contents;
-      }
-    }
+    display: grid;
+    gap: 2rem;
+    margin-block: 1rem;
+    border: 0.5rem solid red;
+    padding: 0.5rem;
   }
 
   .table {

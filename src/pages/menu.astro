@@ -49,19 +49,13 @@ const menuCollection = menuboards.map((m) => {
   </article>
 </Layout>
 
-<style lang="scss">
+<style lang='scss'>
   .type {
     margin: 1rem;
     max-width: 80ch;
   }
 
   article {
-    @supports (display: masonry) {
-      display: masonry;
-      gap: 2rem;
-      // display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr));
-    }
-    padding: 2rem;
+    padding: 1rem;
   }
 </style>

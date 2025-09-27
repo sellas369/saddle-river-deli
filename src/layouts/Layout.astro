@@ -3,21 +3,64 @@ import '../sass/typetura.css';
 import '../sass/style.scss';
 
 import Header from '../components/Header.svelte';
+import InfoBlock from '../components/InfoBlock.svelte';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
     <title>Saddle River Deli & Catering</title>
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
+    <div class='container'>
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <div class='inside'>
+          <p>© Saddle River Deli {new Date().getFullYear()}</p>
+
+          <p>
+            Sorry, but occasionally there may be price changes. Please call with
+            any questions.
+          </p>
+
+          <InfoBlock />
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
+
+<style lang='scss'>
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+
+  footer {
+    background: #0c7f00;
+    padding: 1rem;
+    border-top: 2px solid black;
+    margin-block-start: 1rem;
+  }
+
+  .inside {
+    max-width: 80ch;
+    margin-inline: auto;
+    color: white;
+    display: grid;
+    gap: 1rem;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+</style>
