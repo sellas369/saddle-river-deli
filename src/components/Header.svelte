@@ -1,7 +1,7 @@
 <div class="top-wrapper">
   <header>
     <div class="title">
-      <h1><a href="/">Saddle River Deli</a></h1>
+      <h1><a href="/saddle-river-deli">Saddle River Deli</a></h1>
       <p>Eat In | Take Out | Delivery | Catering</p>
     </div>
 
@@ -62,8 +62,8 @@
   </header>
   <nav>
     <ul>
-      <li><a href="/menu">Pickup & Delivery Menu</a></li>
-      <li><a href="/catering">Catering Menu</a></li>
+      <li><a href="/saddle-river-deli/menu">Pickup & Delivery Menu</a></li>
+      <li><a href="/saddle-river-deli/catering">Catering Menu</a></li>
     </ul>
   </nav>
 </div>
