@@ -6,7 +6,7 @@ labeling:
   large: ''
 items:
   - name: Store-Baked Sliced 100% White Meat Turkey Breast (Baked Daily)
-    regular: 5.49
+    regular: 5.48
     large: null
   - name: Store-Baked Roast Beef (Baked Daily)
     regular: 5.49
@@ -33,3 +33,4 @@ items:
     regular: 4.49
     large: null
 ---
+
