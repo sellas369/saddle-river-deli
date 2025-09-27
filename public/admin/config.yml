@@ -112,67 +112,96 @@ collections:
       - label: Options
         name: options
         widget: list
-        field:
-          label: Item
-          name: item
-          widget: object
-          fields:
-            - label: Title
-              name: title
-            - label: Description
-              name: description
-              widget: text
-              required: false
-            - label: Price
-              name: price
-              widget: object
-              fields:
-                - label: Servings
-                  name: servings
-                  widget: list
-                  field:
-                    label: Serving
-                    name: serving
-                    widget: object
-                    summary: '{{fields.title}}: ${{fields.cost}}'
-                    fields:
-                      - label: Price
-                        name: cost
-                        widget: number
-                        min: 0
-                        step: .01
-                        value_type: float
-                      - label: Serving Size
-                        name: title
-                        default: per person
-                      - label: Is a platter
-                        name: platter
-                        widget: boolean
-                        hint: This will display the serving size as a title instead of as a cost per serving size
-                        required: false
-                - label: Minimum
-                  name: string
-                  required: false
-            - label: Extras
-              name: extras
-              widget: list
-              required: false
-              field:
-                label: Extra
-                name: extra
-                widget: object
+        fields:
+          - label: Title
+            name: title
+          - label: Description
+            name: description
+            widget: text
+            required: false
+          - label: Price
+            name: price
+            widget: object
+            fields:
+              - label: Servings
+                name: servings
+                widget: list
                 summary: '{{fields.title}}: ${{fields.cost}}'
                 fields:
-                  - label: Description
-                    name: title
                   - label: Price
                     name: cost
                     widget: number
                     min: 0
                     step: .01
                     value_type: float
+                  - label: Serving Size
+                    name: title
+                    default: per person
+                  - label: Is a platter
+                    name: platter
+                    widget: boolean
+                    hint: This will display the serving size as a title instead of as a cost per serving size
+                    required: false
+              - label: Minimum
+                name: minimum
+                widget: string
+                required: false
+          - label: Extras
+            name: extras
+            widget: list
+            summary: '{{fields.title}}: ${{fields.cost}}'
+            required: false
+            fields:
+              - label: Description
+                name: title
+              - label: Price
+                name: cost
+                widget: number
+                min: 0
+                step: .01
+                value_type: float
       - label: Weight
         name: weight
         widget: number
         value_type: int
         default: 0
+  - label: Buffet
+    name: buffet
+    folder: src/content/buffet
+    create: true
+    fields:
+      - label: Title
+        name: title
+      - label: Description
+        name: body
+        widget: markdown
+      - label: Cost (per person)
+        name: cost
+        widget: number
+        min: 0
+        step: .01
+        value_type: float
+      - label: Minimum
+        name: minimum
+        widget: number
+        min: 0
+        value_type: int
+      - label: Menu
+        name: menu
+        widget: list
+        fields:
+          - label: Title
+            name: title
+          - label: Choices
+            name: choices
+            widget: number
+            hint: Number of choices custom can make
+            min: 1
+            value_type: int
+            default: 1
+          - label: Options
+            name: options
+            widget: list
+            field:
+              label: Item
+              widget: string
