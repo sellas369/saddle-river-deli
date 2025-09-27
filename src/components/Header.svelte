@@ -79,6 +79,11 @@
       line-height: 1;
       margin: 0;
       padding: 0;
+      text-shadow:
+        1px 1px black,
+        1px -1px black,
+        -1px 1px black,
+        -1px -1px black;
     }
   }
 
