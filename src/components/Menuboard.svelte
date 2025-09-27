@@ -37,7 +37,7 @@
   // });
 </script>
 
-<section class={['container', group ? 'grouped' : '']}>
+<section class="container">
   {#each items as item}
     <table class="table">
       <caption>
@@ -51,7 +51,7 @@
       {#if item.labeling}
         <thead>
           <tr>
-            <td></td>
+            <th></th>
             <th class="cost">{item.labeling.regular}</th>
             {#if item.double}
               <th class="cost">{item.labeling.large}</th>
@@ -112,6 +112,9 @@
 
   .table {
     width: 100%;
+    max-width: auto;
+    table-layout: fixed;
+    // max-width: calc(100% - 3.25rem);
     border: 1px solid black;
     border-collapse: collapse;
 
@@ -166,7 +169,7 @@
   }
 
   .cost {
-    width: 8ch;
+    width: 10ch;
     text-align: center;
     font-variant-numeric: tabular-nums;
   }
