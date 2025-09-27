@@ -38,7 +38,7 @@ const catering = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    description: z.string().optional(),
+    weight: z.number().int(),
     options: z.array(
       z.object({
         title: z.string(),

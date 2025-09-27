@@ -1,43 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const catering = (await getCollection('catering'))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title))
+  .sort((a, b) => {
+    if (a.data.weight < b.data.weight) return -1;
+    if (a.data.weight > b.data.weight) return 1;
+    return 0;
+  });
+// console.log(catering[0]);
 ---
 
 <Layout>
-  <article class="type">
-    <p>
-      Welcome to the <strong>Saddle River Deli</strong>, your neighborhood
-      destination for delicious food conveniently located in the heart of Saddle
-      River, NJ.
-    </p>
-    <p>
-      Whether you're looking for a quick and satisfying meal or planning an
-      event for a crowd, we've got you covered. Stop by to try our daily hot and
-      cold specials, call ahead at <a href="tel:+12013278578">201-327-8578</a> or
-      <a href="tel:+12013270015">201-327-0015</a> for easy pickup, or let us deliver
-      right to your door ($25 minimum). We're open Monday-Saturday, 6:00am-3:00pm,
-      so you can start your day off right with a filling breakfast or power through
-      the afternoon with our fresh hot and cold sandwiches, wraps, paninis, salads,
-      and sides.
-    </p>
-    <p>
-      We also specialize in making your next event a success. We cater to groups
-      of all sizes, from intimate gatherings to large-scale events like
-      graduations, confirmations, and even weddings! Our professional catering
-      team is ready to help you craft the perfect menu to impress your guests.
-      We also welcome corporate accounts, making it simple and convenient for
-      businesses to provide delicious meals for meetings, luncheons, dinners,
-      and more.
-    </p>
-    <p>
-      Come experience the <strong>Saddle River Deli</strong> difference, where it's
-      always a "Good Time" to eat!
-    </p>
-  </article>
-</Layout>
-
-<style lang="scss">
-  .type {
-    margin: 1rem;
-    max-width: 80ch;
+  {
+    catering.map((c) => {
+      return (
+        <section>
+          <h2>{c.data.title}</h2>
+          <p>Options: {c.data.options.length}</p>
+        </section>
+      );
+    })
   }
-</style>
+</Layout>

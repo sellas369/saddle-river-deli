@@ -9,6 +9,7 @@ menu:
       - Tossed Green Salad
       - Caesar Salad
 ---
+
 **Perfect for Baby Showers, Bridal Showers, Communions, Weddings, Anniversaries, or Birthday Parties**.
 
 Buffets are served with an assortment of bread and rolls.

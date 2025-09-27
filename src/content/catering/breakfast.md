@@ -1,6 +1,5 @@
 ---
 title: Breakfast
-description: ''
 options:
   - title: Eye Opener
     description: Bagels with cream cheese, butter and jelly, assorted Danishes and muffins, croissants, crumb cakes
