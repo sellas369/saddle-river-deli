@@ -5,7 +5,7 @@ options:
     description: Bagels with cream cheese, butter and jelly, assorted Danishes and muffins, croissants, crumb cakes
     price:
       servings:
-        - cost: 6.99
+        - cost: 7
           title: per person
           platter: false
       minimum: 20 Guests
@@ -67,3 +67,4 @@ options:
         cost: 2.5
 weight: 0
 ---
+
