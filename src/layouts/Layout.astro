@@ -4,25 +4,29 @@ import '../sass/style.scss';
 
 import Header from '../components/Header.svelte';
 import InfoBlock from '../components/InfoBlock.svelte';
+
+import { getEntry } from 'astro:content';
+
+const config = await getEntry('config', 'config');
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <title>Saddle River Deli & Catering</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{config.data.title}</title>
   </head>
   <body>
-    <div class='container'>
-      <Header />
+    <div class="container">
+      <Header config={config.data} />
       <main>
         <slot />
       </main>
       <footer>
-        <div class='inside'>
+        <div class="inside">
           <p>© Saddle River Deli {new Date().getFullYear()}</p>
 
           <p>
@@ -30,14 +34,14 @@ import InfoBlock from '../components/InfoBlock.svelte';
             any questions.
           </p>
 
-          <InfoBlock />
+          <InfoBlock config={config.data} />
         </div>
       </footer>
     </div>
   </body>
 </html>
 
-<style lang='scss'>
+<style lang="scss">
   .container {
     display: grid;
     grid-template-rows: auto 1fr auto;

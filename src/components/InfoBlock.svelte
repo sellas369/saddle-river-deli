@@ -1,3 +1,18 @@
+<script lang="ts">
+  import type { CollectionEntry } from 'astro:content';
+
+  type ConfigSchema = CollectionEntry<'config'>['data'];
+
+  let { config }: { config: ConfigSchema } = $props();
+
+  console.log(config);
+
+  const time = (t) =>
+    new Date(`01/01/2000 ${t}`).toLocaleTimeString('en-US', {
+      timeStyle: 'short',
+    });
+</script>
+
 <div class="info">
   <address>
     <p>
@@ -12,8 +27,8 @@
         />
       </svg>
       <a
-        href="https://www.google.com/maps/place/Saddle+River+Deli+%26+Catering/@41.0325398,-74.1103631,3571m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c2e43e0496b8b7:0xbbfbcc39534276b1!8m2!3d41.0325403!4d-74.1000634!16s%2Fg%2F1td2hvb7?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank">171 E Saddle River Rd, Saddle River, NJ 07458</a
+        href={`https://www.google.com/maps/search/${config.title}+${config.address}`}
+        target="_blank">{config.address}</a
       >
     </p>
     <p>
@@ -28,8 +43,11 @@
         />
       </svg>
       <span>
-        <a href="tel:+12013278578">201-327-8578</a> |
-        <a href="tel:+12013270015">201-327-0015</a>
+        {#each config.phone as phone, i}
+          <a href={`tel:+1${phone.replace(/(-|\s)/g, '')}`}>{phone}</a
+          >{#if i !== config.phone.length - 1}<span>&nbsp;|&nbsp;</span>
+          {/if}
+        {/each}
       </span>
     </p>
   </address>
@@ -45,11 +63,11 @@
       />
     </svg>
     <span class="hours--actual"
-      >Monday - Saturday <time datetime="06:00">6:00am</time>-<time
-        datetime="15:00">3:00pm</time
-      ></span
+      >{config.hours.open}
+      <time datetime={config.hours.start}>{time(config.hours.start)}</time
+      >-<time datetime={config.hours.end}>{time(config.hours.end)}</time></span
     >
-    <span class="hours--actual">Closed Sunday</span>
+    <span class="hours--actual">Closed {config.hours.closed}</span>
   </p>
 </div>
 

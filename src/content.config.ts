@@ -82,9 +82,34 @@ const buffet = defineCollection({
   }),
 });
 
+const pages = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
+const config = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    address: z.string(),
+    phone: z.array(z.string()),
+    hours: z.object({
+      open: z.string(),
+      start: z.string(),
+      end: z.string(),
+      closed: z.string(),
+    }),
+  }),
+});
+
 export const collections = {
   menu,
   menuboard,
   catering,
   buffet,
+  pages,
+  config,
 };

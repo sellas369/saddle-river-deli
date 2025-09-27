@@ -205,7 +205,7 @@ collections:
             field:
               label: Item
               widget: string
-  - label: Stand-Alone Pages
+  - label: Pages
     name: pages
     folder: src/content/pages
     create: false

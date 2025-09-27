@@ -1,16 +1,21 @@
-<script>
+<script lang="ts">
+  import type { CollectionEntry } from 'astro:content';
   import InfoBlock from './InfoBlock.svelte';
+
+  type ConfigSchema = CollectionEntry<'config'>['data'];
+
+  let { config }: { config: ConfigSchema } = $props();
 </script>
 
 <div class="top-wrapper">
   <header>
     <div class="title">
-      <h1><a href="/saddle-river-deli">Saddle River Deli</a></h1>
-      <p>Eat In | Take Out | Delivery | Catering</p>
+      <h1><a href="/saddle-river-deli">{config.title}</a></h1>
+      <p>{config.subtitle}</p>
     </div>
 
     <footer>
-      <InfoBlock />
+      <InfoBlock {config} />
     </footer>
   </header>
   <nav>

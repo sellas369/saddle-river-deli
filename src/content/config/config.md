@@ -1,5 +1,5 @@
 ---
-title: Saddle River Deli
+title: Saddle River Deli & Catering
 subtitle: Eat In | Take Out | Delivery | Catering
 address: 171 E Saddle River Rd, Saddle River, NJ 07458
 phone:
@@ -11,4 +11,3 @@ hours:
   end: 15:00
   closed: Sunday
 ---
-

@@ -25,4 +25,3 @@ items:
     regular: 3
     large: null
 ---
-

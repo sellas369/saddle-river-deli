@@ -67,4 +67,3 @@ options:
         cost: 2.5
 weight: 0
 ---
-
