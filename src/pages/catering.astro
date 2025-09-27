@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Catering from '../components/Catering.svelte';
+import Buffet from '../components/Buffet.svelte';
+import { getEntry } from 'astro:content';
 
 const catering = (await getCollection('catering'))
   .sort((a, b) => a.data.title.localeCompare(b.data.title))
@@ -9,18 +12,13 @@ const catering = (await getCollection('catering'))
     if (a.data.weight > b.data.weight) return 1;
     return 0;
   });
+
+const buffet = await getEntry('buffet', 'buffet');
+
 // console.log(catering[0]);
 ---
 
 <Layout>
-  {
-    catering.map((c) => {
-      return (
-        <section>
-          <h2>{c.data.title}</h2>
-          <p>Options: {c.data.options.length}</p>
-        </section>
-      );
-    })
-  }
+  {catering.map((c) => <Catering menu={c} />)}
+  <Buffet menu={buffet} />
 </Layout>
