@@ -15,8 +15,6 @@
 
     return 'M/P';
   };
-
-  console.log(data.menu);
 </script>
 
 <section>

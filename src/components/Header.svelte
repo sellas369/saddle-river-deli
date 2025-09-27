@@ -62,8 +62,8 @@
   </header>
   <nav>
     <ul>
-      <li><a href="/saddle-river-deli/menu">Pickup & Delivery Menu</a></li>
-      <li><a href="/saddle-river-deli/catering">Catering Menu</a></li>
+      <li><a href="/saddle-river-deli/menu">Menu</a></li>
+      <li><a href="/saddle-river-deli/catering">Catering</a></li>
     </ul>
   </nav>
 </div>

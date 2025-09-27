@@ -2,7 +2,7 @@
 title: Platters
 options:
   - title: Fruit Platter
-    body: ''
+    description: An array of fresh seasonal fruit and berries.
     price:
       servings:
         - cost: 40
@@ -16,9 +16,9 @@ options:
           platter: true
       minimum: ''
     extras: []
-    description: An array of fresh seasonal fruit and berries.
-  - title: NY Style Platter
     body: ''
+  - title: NY Style Platter
+    description: Assortment of Corn Beef, Pastrami, Roast Beef, Turkey, and Hebrew National Salami
     price:
       servings:
         - cost: 9.95
@@ -26,8 +26,9 @@ options:
           platter: false
       minimum: ''
     extras: []
-    description: Assortment of Corn Beef, Pastrami, Roast Beef, Turkey, and Hebrew National Salami
+    body: ''
   - title: Southern Fried Chicken
+    description: Honey Dipped and cooked until Golden Brown
     price:
       servings:
         - cost: 45
@@ -35,8 +36,8 @@ options:
           platter: false
       minimum: ''
     extras: []
-    description: Honey Dipped and cooked until Golden Brown
   - title: Chicken Tenders
+    description: Tender Strips of Breaded Chicken with Honey Mustard or BBQ Sauce
     price:
       servings:
         - cost: 45
@@ -47,8 +48,8 @@ options:
           platter: true
       minimum: ''
     extras: []
-    description: Tender Strips of Breaded Chicken with Honey Mustard or BBQ Sauce
   - title: Heroes 2-6 Ft.
+    description: Our heroes are for any occasion and made with your selection of Cold Cuts. Feeds 5 people per foot.
     price:
       servings:
         - cost: 16.95
@@ -56,8 +57,8 @@ options:
           platter: false
       minimum: ''
     extras: []
-    description: Our heroes are for any occasion and made with your selection of Cold Cuts. Feeds 5 people per foot.
   - title: Shrimp Cocktail
+    description: ''
     price:
       servings:
         - cost: 20
@@ -65,7 +66,6 @@ options:
           platter: false
       minimum: 5 pounds
     extras: []
-    description: ''
 weight: 5
 ---
 
