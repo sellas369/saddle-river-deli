@@ -224,6 +224,9 @@ collections:
         name: title
       - label: Subtitle
         name: subtitle
+      - label: Homepage Intro
+        name: body
+        widget: markdown
       - label: Address
         name: address
       - label: Phone Number
@@ -255,3 +258,14 @@ collections:
             picker_utc: false
           - label: Closed Days
             name: closed
+      - label: Home Page
+        name: home
+        widget: object
+        fields:
+          - label: Regular Menu Button
+            name: menu
+          - label: Catering Menu Button
+            name: catering
+      - label: Disclaimer
+        name: disclaimer
+        widget: text

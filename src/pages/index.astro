@@ -1,53 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const config = await getEntry('config', 'config');
 ---
 
 <Layout>
-  <!-- <nav>
-    <ul>
-      <li><a href="/menu">Pickup & Delivery Menu</a></li>
-      <li><a href="/catering">Catering Menu</a></li>
-    </ul>
-  </nav> -->
-  <article class="type">
-    <p>
-      Welcome to the <strong>Saddle River Deli</strong>, your neighborhood
-      destination for delicious food conveniently located in the heart of Saddle
-      River, NJ.
-    </p>
-    <p>
-      Whether you're looking for a quick and satisfying meal or planning an
-      event for a crowd, we've got you covered. Stop by to try our daily hot and
-      cold specials, call ahead at <a href="tel:+12013278578">201-327-8578</a> or
-      <a href="tel:+12013270015">201-327-0015</a> for easy pickup, or let us deliver
-      right to your door ($25 minimum). We're open Monday - Saturday <time
-        datetime="06:00">6:00am</time
-      >-<time datetime="15:00">3:00pm</time>, so you can start your day off
-      right with a filling breakfast or power through the afternoon with our
-      fresh hot and cold sandwiches, wraps, paninis, salads, and sides.
-    </p>
-    <p>
-      We also specialize in making your next event a success. We cater to groups
-      of all sizes, from intimate gatherings to large-scale events like
-      graduations, confirmations, and even weddings! Our professional catering
-      team is ready to help you craft the perfect menu to impress your guests.
-      We also welcome corporate accounts, making it simple and convenient for
-      businesses to provide delicious meals for meetings, luncheons, dinners,
-      and more.
-    </p>
-    <p>
-      Come experience the <strong>Saddle River Deli</strong> difference, where it's
-      always a "Good Time" to eat!
-    </p>
-  </article>
+  <div class="wrapper">
+    <div class="type" set:html={config?.rendered?.html} />
+
+    <nav>
+      <ul>
+        <li><a href="/saddle-river-deli/menu">{config.data.home.menu}</a></li>
+        <li>
+          <a href="/saddle-river-deli/catering">{config.data.home.catering}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </Layout>
 
 <style lang="scss">
+  .wrapper {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
   .type {
-    margin-block: 2rem;
-    margin-inline: auto;
-    padding-inline: 2rem;
-    max-width: 80ch;
+    :global(> :first-child) {
+      margin-block-start: 0;
+    }
+    :global(> :last-child) {
+      margin-block-end: 0;
+    }
   }
 
   nav {

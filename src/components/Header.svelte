@@ -1,10 +1,16 @@
 <script lang="ts">
   import type { CollectionEntry } from 'astro:content';
-  import InfoBlock from './InfoBlock.svelte';
+  // import InfoBlock from './InfoBlock.svelte';
 
   type ConfigSchema = CollectionEntry<'config'>['data'];
 
-  let { config }: { config: ConfigSchema } = $props();
+  let {
+    config,
+    menu,
+    catering,
+    path,
+  }: { config: ConfigSchema; menu: string; catering: string; path: string } =
+    $props();
 </script>
 
 <div class="top-wrapper">
@@ -13,15 +19,27 @@
       <h1><a href="/saddle-river-deli">{config.title}</a></h1>
       <p>{config.subtitle}</p>
     </div>
-
+    <!-- 
     <footer>
       <InfoBlock {config} />
-    </footer>
+    </footer> -->
   </header>
   <nav>
     <ul>
-      <li><a href="/saddle-river-deli/menu">Menu</a></li>
-      <li><a href="/saddle-river-deli/catering">Catering</a></li>
+      <li>
+        <a
+          href="/saddle-river-deli/menu"
+          aria-current={path === '/saddle-river-deli/menu' ? 'page' : null}
+          >{menu}</a
+        >
+      </li>
+      <li>
+        <a
+          href="/saddle-river-deli/catering"
+          aria-current={path === '/saddle-river-deli/catering' ? 'page' : null}
+          >{catering}</a
+        >
+      </li>
     </ul>
   </nav>
 </div>
@@ -128,11 +146,18 @@
       display: grid;
       align-items: center;
 
+      &[aria-current='page'] {
+        background-color: rgba(white, 0.5);
+        color: black;
+      }
+
       &:hover {
         background-color: rgba(black, 0.5);
+        color: white;
       }
       &:active {
         background-color: rgba(black, 0.15);
+        color: white;
       }
     }
   }

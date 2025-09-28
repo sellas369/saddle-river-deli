@@ -5,7 +5,7 @@ labeling:
   regular: Sandwich
   large: Hero
 items:
-  - name: BLT (Bacon/Lettuce/Tomato & Mayo)
+  - name: BLT (Bacon, Lettuce, Tomato & Mayo)
     regular: 5.95
     large: 6.95
   - name: Assorted Cold Cuts (Lettuce…)

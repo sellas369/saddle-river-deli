@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const about = await getEntry('pages', 'about');
+---
+
+<Layout>
+  <div set:html={about?.rendered.html} />
+</Layout>

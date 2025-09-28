@@ -14,11 +14,13 @@ const catering = (await getCollection('catering'))
   });
 
 const buffet = await getEntry('buffet', 'buffet');
-
-// console.log(catering[0]);
+const menu = await getEntry('pages', 'catering');
 ---
 
-<Layout>
+<Layout title={menu?.data.title}>
+  <div set:html={menu?.rendered.html} />
   {catering.map((c) => <Catering menu={c} />)}
   <Buffet menu={buffet} />
 </Layout>
+
+<style lang="scss"></style>

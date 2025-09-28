@@ -6,7 +6,7 @@ items:
   - name: BUFFALO CHICKEN (Lettuce & Blue Cheese Dressing)
     regular: 9.25
     large: null
-  - name: GREEK GRILLED CHICKEN (Grilled Chicken/Tomato/Cucumber/Feta/Pitted Black Kalamata Olives)
+  - name: GREEK GRILLED CHICKEN (Grilled Chicken, Tomato, Cucumber, Feta, Pitted Black Kalamata Olives)
     regular: 9.25
     large: null
   - name: GREEK WITHOUT CHICKEN (Greek Salad, Feta Cheese, PITTED Black Kalamata Olives)

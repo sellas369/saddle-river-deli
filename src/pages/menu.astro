@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Menuboard from '../components/Menuboard.svelte';
+import { getEntry } from 'astro:content';
+
+const menu = await getEntry('pages', 'menu');
 
 type MenuboardSchema = CollectionEntry<'menuboard'>['data'];
 type MenuSchema = CollectionEntry<'menu'>['data'];
@@ -43,19 +46,7 @@ const menuCollection = menuboards.map((m) => {
 });
 ---
 
-<Layout>
-  <article>
-    {menuCollection.map((m) => <Menuboard item={m} />)}
-  </article>
+<Layout title={menu?.data.title}>
+  <div set:html={menu?.rendered.html} />
+  {menuCollection.map((m) => <Menuboard item={m} />)}
 </Layout>
-
-<style lang="scss">
-  .type {
-    margin: 1rem;
-    max-width: 80ch;
-  }
-
-  article {
-    padding: 1rem;
-  }
-</style>

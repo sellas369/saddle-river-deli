@@ -3,9 +3,8 @@
 
   type ConfigSchema = CollectionEntry<'config'>['data'];
 
-  let { config }: { config: ConfigSchema } = $props();
-
-  console.log(config);
+  let { config, shadow = false }: { config: ConfigSchema; shadow: boolean } =
+    $props();
 
   const time = (t) =>
     new Date(`01/01/2000 ${t}`).toLocaleTimeString('en-US', {
@@ -13,7 +12,7 @@
     });
 </script>
 
-<div class="info">
+<div class="info {shadow ? 'shadow' : ''}">
   <address>
     <p>
       <svg
@@ -27,7 +26,7 @@
         />
       </svg>
       <a
-        href={`https://www.google.com/maps/search/${config.title}+${config.address}`}
+        href={`https://www.google.com/maps/search/${config.address}`}
         target="_blank">{config.address}</a
       >
     </p>
@@ -74,7 +73,7 @@
 <style lang="scss">
   .info {
     display: grid;
-    gap: 0.5rem;
+    gap: 0.5em;
     width: 100%;
     max-width: 80ch;
     margin: 0 auto;
@@ -86,16 +85,20 @@
 
   p {
     margin: 0;
-    text-shadow: 1px 1px black;
-    font-size: 1rem;
+
+    font-size: 1em;
+
+    .shadow & {
+      text-shadow: 1px 1px black;
+    }
   }
 
   address {
     font-style: normal;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    // gap: 1rem;
+    gap: 0.5em;
+    // gap: 1em;
   }
 
   .icon {
@@ -110,7 +113,7 @@
   address p {
     display: grid;
     grid-template-columns: 1em auto;
-    column-gap: 0.5rem;
+    column-gap: 0.5em;
 
     svg {
       align-self: center;

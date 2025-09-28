@@ -8,6 +8,13 @@ import InfoBlock from '../components/InfoBlock.svelte';
 import { getEntry } from 'astro:content';
 
 const config = await getEntry('config', 'config');
+const about = await getEntry('pages', 'about');
+const menu = await getEntry('pages', 'menu');
+const catering = await getEntry('pages', 'catering');
+
+const { title } = Astro.props;
+
+const t = `${title ? title + ' | ' : ''}${config?.data.title}`;
 ---
 
 <!doctype html>
@@ -17,24 +24,49 @@ const config = await getEntry('config', 'config');
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{config.data.title}</title>
+    <title>{t}</title>
   </head>
   <body>
     <div class="container">
-      <Header config={config.data} />
+      <Header
+        config={config.data}
+        menu={menu?.data.title}
+        catering={catering?.data.title}
+        path={Astro.url.pathname}
+      />
       <main>
-        <slot />
+        <article>
+          <header>
+            <h1>{title || config.data.title}</h1>
+            <footer class="info">
+              <InfoBlock config={config.data} shadow={false} />
+            </footer>
+          </header>
+          <slot />
+        </article>
       </main>
-      <footer>
+      <footer class="global">
         <div class="inside">
-          <p>© Saddle River Deli {new Date().getFullYear()}</p>
+          <p>{config.data.disclaimer}</p>
 
-          <p>
-            Sorry, but occasionally there may be price changes. Please call with
-            any questions.
-          </p>
+          <ul role="list" class="footer-links">
+            <li>
+              <a href="/saddle-river-deli">{config.data.title}</a>
+            </li>
+            <li>
+              <a href="/saddle-river-deli/menu">{menu.data.title}</a>
+            </li>
+            <li>
+              <a href="/saddle-river-deli/catering">{catering.data.title}</a>
+            </li>
+            <li>
+              <a href="/saddle-river-deli/about-us">{about.data.title}</a>
+            </li>
+          </ul>
 
           <InfoBlock config={config.data} />
+
+          <p>© {config.data.title} {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
@@ -48,11 +80,31 @@ const config = await getEntry('config', 'config');
     min-height: 100vh;
   }
 
-  footer {
+  h1 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  article {
+    padding: 1rem;
+    max-width: 80ch;
+    margin-inline: auto;
+  }
+  header {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .info {
+    font-size: 1.15rem;
+  }
+
+  .global {
     background: #0c7f00;
     padding: 1rem;
     border-top: 2px solid black;
     margin-block-start: 1rem;
+    font-weight: 300;
   }
 
   .inside {
@@ -60,11 +112,23 @@ const config = await getEntry('config', 'config');
     margin-inline: auto;
     color: white;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 
     p {
       margin: 0;
       padding: 0;
+    }
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    a {
+      color: currentColor;
     }
   }
 </style>

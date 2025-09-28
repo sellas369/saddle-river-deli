@@ -102,6 +102,11 @@ const config = defineCollection({
       end: z.string(),
       closed: z.string(),
     }),
+    home: z.object({
+      menu: z.string(),
+      catering: z.string(),
+    }),
+    disclaimer: z.string(),
   }),
 });
 
