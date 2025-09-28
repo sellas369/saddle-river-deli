@@ -23,6 +23,7 @@ const t = `${title ? title + ' | ' : ''}${config?.data.title}`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0c7f00" />
     <meta name="generator" content={Astro.generator} />
     <title>{t}</title>
   </head>
@@ -74,6 +75,9 @@ const t = `${title ? title + ' | ' : ''}${config?.data.title}`;
 </html>
 
 <style lang="scss">
+  body {
+    background-color: #0c7f00;
+  }
   .container {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -89,6 +93,7 @@ const t = `${title ? title + ' | ' : ''}${config?.data.title}`;
     padding: 1rem;
     max-width: 80ch;
     margin-inline: auto;
+    background-color: white;
   }
   header {
     display: grid;
@@ -103,7 +108,7 @@ const t = `${title ? title + ' | ' : ''}${config?.data.title}`;
     background: #0c7f00;
     padding: 1rem;
     border-top: 2px solid black;
-    margin-block-start: 1rem;
+    // margin-block-start: 1rem;
     font-weight: 300;
   }
 
@@ -126,7 +131,8 @@ const t = `${title ? title + ' | ' : ''}${config?.data.title}`;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
     a {
       color: currentColor;
     }
