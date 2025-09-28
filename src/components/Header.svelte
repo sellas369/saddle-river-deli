@@ -11,6 +11,19 @@
     path,
   }: { config: ConfigSchema; menu: string; catering: string; path: string } =
     $props();
+
+  function active(url: 'menu' | 'catering') {
+    const routing = {
+      menu: '/saddle-river-deli/menu',
+      catering: '/saddle-river-deli/catering',
+    };
+
+    const item = routing[url];
+
+    if (path === item || path === item + '/') return 'page';
+
+    return null;
+  }
 </script>
 
 <div class="top-wrapper">
@@ -27,16 +40,12 @@
   <nav>
     <ul>
       <li>
-        <a
-          href="/saddle-river-deli/menu"
-          aria-current={path === '/saddle-river-deli/menu' ? 'page' : null}
+        <a href="/saddle-river-deli/menu" aria-current={active('menu')}
           >{menu}</a
         >
       </li>
       <li>
-        <a
-          href="/saddle-river-deli/catering"
-          aria-current={path === '/saddle-river-deli/catering' ? 'page' : null}
+        <a href="/saddle-river-deli/catering" aria-current={active('catering')}
           >{catering}</a
         >
       </li>
