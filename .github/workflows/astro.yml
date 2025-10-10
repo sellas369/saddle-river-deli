@@ -64,11 +64,14 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git tag -a "v${{ github.run_number }}" -m "Release v${{ github.run_number }}"
-          git push origin tag "v${{ github.run_number }}"
+      - name: Zip Dist
+        run: |
+          cd ${{ env.BUILD_PATH }}
+          zip -r site dist
       - name: Upload Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ env.BUILD_PATH }}/dist/**/*
+          files: site.zip
           tag_name: v${{ github.run_number }}
           name: v${{ github.run_number }}
 
