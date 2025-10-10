@@ -64,6 +64,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git tag -a "v${{ github.run_number }}" -m "Release v${{ github.run_number }}"
+          git push origin tag "v${{ github.run_number }}"
       - name: Upload Release
         uses: softprops/action-gh-release@v2
         with:
