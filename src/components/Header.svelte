@@ -128,13 +128,19 @@
 
   nav {
     margin: 0;
-    margin-block-start: 1rem;
+    // margin-block-start: 1rem;
+    padding-block-start: 1rem;
+    background: linear-gradient(to bottom, #0c7f00 1rem, rgba(0, 0, 0, 0.5));
     // background-color: blue;
 
     ul {
       margin: 0;
       padding: 0;
       display: flex;
+      max-width: 865px;
+      width: 100%;
+      margin-inline: auto;
+      background: #0c7f00;
     }
 
     li {
