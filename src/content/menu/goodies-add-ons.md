@@ -24,7 +24,7 @@ items:
   - name: American, Swiss, Cheddar, Provolone, Pepper Jack
     regular: 0.5
     large: null
-  - name: Brie, Fresh Mozzarella Cheese & Other Specialty Cheeses
+  - name: Fresh Mozzarella Cheese & Other Specialty Cheeses
     regular: 2
     large: null
   - name: Roasted Peppers
@@ -34,3 +34,4 @@ items:
     regular: 0.5
     large: null
 ---
+
