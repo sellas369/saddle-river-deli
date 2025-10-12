@@ -11,7 +11,7 @@ items:
   - name: Buffalo Chicken (Lettuce, Blue Cheese...)
     regular: 10.25
     large: 12.25
-  - name: Store-Baked Sliced Turkey (This is the Same as Thanksgiving Day Roasted Turkey)
+  - name: Store-Baked Sliced Turkey  (This is the Same as Thanksgiving Day Roasted Turkey)
     regular: 10.25
     large: 12.25
   - name: Store-Baked Roast Beef. (100% Eye Round of Beef)
