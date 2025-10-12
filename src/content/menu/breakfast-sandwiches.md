@@ -4,7 +4,7 @@ description: Add Home Fries to your sandwich for $1. Add an extra egg for $0.50/
 labeling: null
 items:
   - name: Single Egg
-    regular: 3.95
+    regular: 4
     large: null
   - name: Egg & Cheese (American, Swiss, or Cheddar)
     regular: 3
@@ -25,3 +25,4 @@ items:
     regular: 3
     large: null
 ---
+
