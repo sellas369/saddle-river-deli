@@ -12,12 +12,6 @@ items:
   - name: Cheese Fries
     regular: 6
     large: null
-  - name: 'Soups (All Home-Made: Chicken Noodle Served Daily, Plus a Variety of Seasonal Specials	)'
-    regular: 5.5
-    large: 10.5
-  - name: Chili (Home Made & Mildly Seasoned)
-    regular: 5.5
-    large: 10.5
   - name: Bacon, Ham, Sausage, Taylor Ham, or Turkey Bacon
     regular: 5
     large: null

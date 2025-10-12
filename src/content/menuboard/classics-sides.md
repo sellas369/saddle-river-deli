@@ -4,5 +4,7 @@ weight: 2
 board:
   - baskets-baskets-baskets
   - from-the-grill
+  - soups-chili
   - goodies-add-ons
 ---
+
