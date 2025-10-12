@@ -29,8 +29,5 @@ items:
   - name: Italian - Ham, Salami, Pepperoni, Lettuce, Tomato, Provolone, Oil, Vinegar, S&P, Oregano
     regular: null
     large: 12.25
-  - name: Prosciutto, Fresh Mozz, Roasted Peppers, Lettuce, Tomato & Balsamic Vinaigrette
-    regular: null
-    large: 9.25
 ---
 
