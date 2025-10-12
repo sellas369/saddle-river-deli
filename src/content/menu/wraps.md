@@ -18,9 +18,6 @@ items:
   - name: ITALIANO (Grilled Chicken, Roasted Peppers, Fresh Mozzarella & Pesto Sauce)
     regular: 12.25
     large: null
-  - name: FRENCH (Smoked Turkey, Imported Brie Cheese, Honey Mustard & Lettuce)
-    regular: 12.25
-    large: null
   - name: RUSSIAN (Roast Beef, Muenster Cheese, Onions, Lettuce, Tomato & Russian Dressing)
     regular: 12.25
     large: null
