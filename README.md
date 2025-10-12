@@ -1,46 +1,17 @@
-# Astro Starter Kit: Basics
+# Saddle River Deli
 
-```sh
-npm create astro@latest -- --template basics
-```
+Source code for Saddle River Deli's website. Pull Requests will generally not be accepted unless it's to fix bugs on the website. The currently deployed rendered HTML can be found in the [latest release](https://github.com/sellas369/saddle-river-deli/releases/latest).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Building and running the project
 
-## 🚀 Project Structure
+- Node 24
+- Corepack @ latest
+- PNPM (installed from Corepack)
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Install dependencies - `pnpm i`
+2. Run dev server `pnpm dev`
+3. Build site `pnpm build`
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Site is built with Astro using Svelte components and Sass.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Admin page is powered by [Sveltia CMS](https://github.com/sveltia/sveltia-cms) using PAT (or local for development) authentication.
