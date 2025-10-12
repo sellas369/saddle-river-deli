@@ -8,10 +8,10 @@ items:
   - name: Pepper Jack
     regular: 4.5
     large: null
-  - name: Head American
+  - name: American
     regular: 4.5
     large: null
-  - name: Head Cheddar
+  - name: Cheddar
     regular: 4.5
     large: null
   - name: Muenster
