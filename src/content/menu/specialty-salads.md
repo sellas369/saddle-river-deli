@@ -34,7 +34,7 @@ items:
     regular: 11.95
     large: null
   - name: ADD Grilled Chicken, Chicken Salad, Tuna Salad or Egg Salad
-    regular: 3
+    regular: 5
     large: null
 ---
 
