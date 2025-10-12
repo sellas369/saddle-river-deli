@@ -1,6 +1,6 @@
 ---
 title: Omelettes
-description: Add Bacon, Ham, Sausage, Taylor Ham, or Turkey Bacon  for $2.00
+description: Add Bacon, Ham, Sausage, Taylor Ham, or Turkey Bacon  for $2.50
 labeling: null
 items:
   - name: Cheese Omlette (American, Swiss, or Cheddar)
@@ -13,3 +13,4 @@ items:
     regular: 7.95
     large: null
 ---
+
