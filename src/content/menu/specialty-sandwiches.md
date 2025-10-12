@@ -23,7 +23,7 @@ items:
   - name: Fish Filet (Flounder made-to-order) with lettuce & our home-made tarter sauce
     regular: 10.25
     large: 12.25
-  - name: Corned Beef (Hot or Cold) or Pastrami or Reuben
+  - name: Pastrami  (Hot or Cold) or Reuben
     regular: 10.25
     large: 12.25
   - name: Italian - Ham, Salami, Pepperoni, Lettuce, Tomato, Provolone, Oil, Vinegar, S&P, Oregano
