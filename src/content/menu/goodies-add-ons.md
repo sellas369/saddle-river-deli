@@ -1,5 +1,5 @@
 ---
-title: Goodies & Add-Ons
+title: Other Delicious Items & A Few Add-Ons
 description: ''
 labeling: null
 items:
