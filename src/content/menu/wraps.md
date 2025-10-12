@@ -3,7 +3,7 @@ title: Wraps
 description: ''
 labeling: null
 items:
-  - name: BUFFALO CHICKEN (Lettuce & Blue Cheese Dressing)
+  - name: BUFFALO CHICKEN (Lettuce  & Blue Cheese Dressing)
     regular: 12.25
     large: null
   - name: GREEK GRILLED CHICKEN (Grilled Chicken, Tomato, Cucumber, Feta, Pitted Black Kalamata Olives)
