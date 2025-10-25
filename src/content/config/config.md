@@ -11,8 +11,8 @@ hours:
   end: 15:00
   closed: Sunday
 home:
-  menu: Eat In | Take Out | Delivery
-  catering: Catering
+  menu: Store Menu – Eat In | Take Out | Delivery
+  catering: Catering Menu
 disclaimer: Sorry, but occasionally there may be price changes. Please call with any questions.
 ---
 

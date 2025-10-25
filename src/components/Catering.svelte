@@ -95,6 +95,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
     gap: 1rem;
+
+    :not(.bonus) li,
+    :not(.extras) li {
+      text-align: center;
+    }
+
+    > :last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
   }
 
   .list {
@@ -119,10 +128,15 @@
   .minimum {
     background-color: hsl(60, 85%, 75%);
     padding-block: 0.5rem;
+    text-align: center;
   }
 
   p {
     margin: 0;
+  }
+
+  .body {
+    text-align: center;
   }
 
   .item {
@@ -134,6 +148,10 @@
 
     &:last-of-type:nth-of-type(odd) {
       grid-column: 1 / -1;
+
+      li {
+        grid-column: span 1;
+      }
     }
   }
 
@@ -162,6 +180,10 @@
     padding: 0;
     display: grid;
     gap: 0.5rem;
+
+    li {
+      text-align: left !important;
+    }
   }
 
   .price-block {

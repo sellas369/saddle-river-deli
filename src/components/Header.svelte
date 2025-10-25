@@ -130,17 +130,20 @@
     margin: 0;
     // margin-block-start: 1rem;
     padding-block-start: 1rem;
-    background: linear-gradient(to bottom, #0c7f00 1rem, rgba(0, 0, 0, 0.5));
+    background: white;
+    padding-inline: 1rem;
+    // background: linear-gradient(to bottom, #0c7f00 1rem, rgba(0, 0, 0, 0.5));
     // background-color: blue;
 
     ul {
       margin: 0;
       padding: 0;
       display: flex;
-      max-width: 865px;
+      max-width: 80ch;
       width: 100%;
       margin-inline: auto;
-      background: #0c7f00;
+      // background: white;
+      gap: 1rem;
     }
 
     li {
@@ -149,13 +152,17 @@
       text-align: center;
       color: white;
       display: grid;
+      background: #0c7f00;
+      box-shadow: 0px 0px 5px 5px rgb(black, 0.5);
+      border-radius: 0.5rem;
+      border: 1px solid rgb(black, 0.5);
+      z-index: 2;
     }
 
     a {
       padding: 1rem;
       text-decoration: none;
       background-color: rgba(black, 0.25);
-      border: 1px solid rgb(black, 0.5);
       font-size: 1.15rem;
       height: 100%;
       display: grid;
