@@ -10,7 +10,7 @@
     currency: 'USD',
   }).format;
 
-  const currency = (p) => {
+  const currency = (p: number) => {
     if (p) {
       const formatted = currencyIntl(p);
       if (formatted.endsWith('.00')) {
@@ -20,6 +20,26 @@
     }
 
     return 'M/P';
+  };
+
+  interface Price {
+    platter?: boolean;
+    cost: number;
+    title: string;
+  }
+
+  const title = (price: Price, addon: boolean = false) => {
+    const c = currency(price.cost);
+    if (price.cost) {
+      if (price.platter) return price.title + ' ' + c;
+      return c + ' ' + price.title;
+    }
+
+    if (addon) {
+      return c + ' ' + price.title;
+    }
+
+    return c;
   };
 </script>
 
@@ -41,11 +61,7 @@
           <ul class="prices" role="list">
             {#each option.price.servings as price}
               <li>
-                {#if price.platter}
-                  {price.title} {currency(price.cost)}
-                {:else}
-                  {currency(price.cost)} {price.title}
-                {/if}
+                {title(price)}
               </li>
             {/each}
           </ul>
@@ -55,11 +71,7 @@
               <ul class="extras" role="list">
                 {#each option.extras as price}
                   <li>
-                    {#if price.platter}
-                      {price.title} {currency(price.cost)}
-                    {:else}
-                      {currency(price.cost)} {price.title}
-                    {/if}
+                    {title(price, true)}
                   </li>
                 {/each}
               </ul>
@@ -119,6 +131,10 @@
     display: grid;
     gap: 1rem;
     grid-template-rows: min-content 1fr auto;
+
+    &:last-of-type:nth-of-type(odd) {
+      grid-column: 1 / -1;
+    }
   }
 
   .prices {

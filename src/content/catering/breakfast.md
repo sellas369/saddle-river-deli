@@ -19,7 +19,7 @@ options:
         - cost: 5.99
           title: per person
           platter: false
-      minimum: ''
+      minimum: 20 Guests
     extras:
       - title: Coffee, Tea, and Juice (per person)
         cost: 2.5
@@ -30,7 +30,7 @@ options:
         - cost: 9.99
           title: per person
           platter: false
-      minimum: ''
+      minimum: 20 Guests
     extras:
       - title: Coffee, Tea, and Juice (per person)
         cost: 2.5
@@ -41,7 +41,7 @@ options:
         - cost: 14.99
           title: per person
           platter: false
-      minimum: ''
+      minimum: 20 Guests
     extras: []
   - title: Early Riser
     description: Fresh fruit salad, scrambled eggs, bacon, sausage, home fries, bagels, assorted rolls, Danishes, butter, cream cheeses, jelly and juice
@@ -50,7 +50,7 @@ options:
         - cost: 11.99
           title: per person
           platter: false
-      minimum: ''
+      minimum: 20 Guests
     extras:
       - title: Coffee and Tea (per person)
         cost: 1.5
@@ -61,7 +61,7 @@ options:
         - cost: 4.99
           title: per person
           platter: false
-      minimum: ''
+      minimum: 20 Guests
     extras:
       - title: Coffee, Tea, and Juice (per person)
         cost: 2.5
