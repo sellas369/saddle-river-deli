@@ -14,8 +14,8 @@
 
   function active(url: 'menu' | 'catering') {
     const routing = {
-      menu: '/saddle-river-deli/menu',
-      catering: '/saddle-river-deli/catering',
+      menu: '/menu',
+      catering: '/catering',
     };
 
     const item = routing[url];
@@ -29,7 +29,7 @@
 <div class="top-wrapper">
   <header>
     <div class="title">
-      <h1><a href="/saddle-river-deli">{config.title}</a></h1>
+      <h1><a href="/">{config.title}</a></h1>
       <p>{config.subtitle}</p>
     </div>
     <!-- 
@@ -40,14 +40,10 @@
   <nav>
     <ul>
       <li>
-        <a href="/saddle-river-deli/menu" aria-current={active('menu')}
-          >{menu}</a
-        >
+        <a href="/menu" aria-current={active('menu')}>{menu}</a>
       </li>
       <li>
-        <a href="/saddle-river-deli/catering" aria-current={active('catering')}
-          >{catering}</a
-        >
+        <a href="/catering" aria-current={active('catering')}>{catering}</a>
       </li>
     </ul>
   </nav>
