@@ -157,6 +157,7 @@
       border-radius: 0.5rem;
       border: 1px solid rgb(black, 0.5);
       z-index: 2;
+      overflow: hidden;
     }
 
     a {
