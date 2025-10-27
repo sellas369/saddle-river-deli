@@ -170,7 +170,7 @@ options:
         - cost: 20
           title: per pound
           platter: false
-      minimum: 5 pounds
+      minimum: ''
     extras: []
   - title: Maryland Style Crab Cake Meat
     description: Served with Cocktail Sauce and lemons on a tray
@@ -179,7 +179,7 @@ options:
         - cost: 30
           title: per pound
           platter: false
-      minimum: 5 pounds
+      minimum: ''
     extras: []
   - title: Antipasto
     description: An assortment of Italian Meats, Prosciutto, Pepperoni, Soppressata, Hot or Sweet Capri Cola, Fresh Mozzarella, Marinated Mushrooms, Roasted Peppers, and Artichoke Hearts
