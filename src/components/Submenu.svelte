@@ -131,6 +131,11 @@
     }
   }
 
+  .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
   ul {
     list-style: none;
     margin: 0;
