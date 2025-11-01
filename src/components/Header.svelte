@@ -54,7 +54,8 @@
     text-align: center;
     display: grid;
     gap: 0.5rem;
-    padding-top: 1rem;
+    padding-block: 1rem;
+
     p {
       font-size: 1.25rem;
       line-height: 1;

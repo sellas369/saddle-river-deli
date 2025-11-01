@@ -18,7 +18,7 @@
 </script>
 
 <section>
-  <h2>{data.title}</h2>
+  <h2 id={menu.slug}>{data.title}</h2>
   <p class="cost">
     {currency(data.cost)} per guest, {data.minimum} guest minimum.
   </p>

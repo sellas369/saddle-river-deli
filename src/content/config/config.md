@@ -14,6 +14,7 @@ home:
   menu: Store Menu – Eat In | Take Out | Delivery
   catering: Catering Menu
 disclaimer: Sorry, but occasionally there may be price changes. Please call with any questions.
+submenu: Choose section
 ---
 
 Thank you for choosing **Saddle River Deli**. Call ahead to place your eat in, take out, or delivery order, or schedule catering for your next special event.

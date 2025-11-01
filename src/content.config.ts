@@ -107,6 +107,7 @@ const config = defineCollection({
       catering: z.string(),
     }),
     disclaimer: z.string(),
+    submenu: z.string(),
   }),
 });
 

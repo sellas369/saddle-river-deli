@@ -1,9 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Menu from '../layouts/Menu.astro';
 import { getCollection } from 'astro:content';
 import Catering from '../components/Catering.svelte';
 import Buffet from '../components/Buffet.svelte';
 import { getEntry } from 'astro:content';
+import Submenu from '../components/Submenu.svelte';
 
 const catering = (await getCollection('catering'))
   .sort((a, b) => a.data.title.localeCompare(b.data.title))
@@ -15,12 +16,40 @@ const catering = (await getCollection('catering'))
 
 const buffet = await getEntry('buffet', 'buffet');
 const menu = await getEntry('pages', 'catering');
+const config = await getEntry('config', 'config');
+
+const submenu = catering.map((c) => ({
+  title: c.data.title,
+  slug: c.slug,
+}));
+submenu.push({
+  title: buffet?.data.title,
+  slug: buffet?.slug,
+});
 ---
 
-<Layout title={menu?.data.title}>
-  <div set:html={menu?.rendered.html} />
-  {catering.map((c) => <Catering menu={c} />)}
-  <Buffet menu={buffet} />
-</Layout>
+<Menu title={menu?.data.title} slug={menu.slug}>
+  <div slot="preamble" set:html={menu?.rendered.html} />
 
-<style lang="scss"></style>
+  <Submenu
+    menu={submenu}
+    title={{
+      title: menu?.data.title,
+      slug: menu.slug,
+    }}
+    submenu={config?.data.submenu}
+    slot="menu"
+    client:load
+  />
+
+  <Fragment>
+    {catering.map((c) => <Catering menu={c} />)}
+    <Buffet menu={buffet} />
+  </Fragment>
+</Menu>
+
+<!-- <style>
+  :global(.main-content) > :global(section) h2 {
+    margin-top: 0;
+  }
+</style> -->

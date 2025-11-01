@@ -14,16 +14,17 @@
     "@astrojs/svelte": "^7.2.0",
     "@sveltia/cms": "^0.107.2",
     "astro": "^5.14.1",
+    "slugify": "^1.6.6",
     "svelte": "^5.38.7"
   },
   "devDependencies": {
-    "typescript": "^5.9.2",
     "csv-parse": "^6.1.0",
     "googleapis": "^159.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.0",
-    "sass": "^1.92.1"
+    "sass": "^1.92.1",
+    "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a"
 }

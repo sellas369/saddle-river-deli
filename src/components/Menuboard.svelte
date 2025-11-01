@@ -42,7 +42,7 @@
     <table class="table">
       <caption>
         <div class="table--caption">
-          <h2 class="table--title">{item.title}</h2>
+          <h2 class="table--title" id={item.slug}>{item.title}</h2>
           {#if item.description}
             <p class="table--description">{item.description}</p>
           {/if}
@@ -94,6 +94,10 @@
     margin-block: 1rem;
     border: 0.5rem solid red;
     padding: 0.5rem;
+
+    @media (min-width: 800px) {
+      margin-block-start: 0;
+    }
   }
 
   .table {

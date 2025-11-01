@@ -1,9 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Menu from '../layouts/Menu.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Menuboard from '../components/Menuboard.svelte';
 import { getEntry } from 'astro:content';
+import Submenu from '../components/Submenu.svelte';
 
 const menu = await getEntry('pages', 'menu');
 
@@ -30,11 +31,13 @@ const menuboards = (await getCollection('menuboard'))
 
 const menuCollection = menuboards.map((m) => {
   const content: Menuboard = m.data;
+  content.slug = m.slug;
 
   content.board = m.data.board
     .map((b) => menus.find((i) => i.slug === b.id))
     .map((b) => {
       const data = b.data;
+      data.slug = b.slug;
       const hasRegular = data.items.find((i) => i.regular !== null);
       const hasLarge = data.items.find((i) => i.large !== null);
       data.double = hasRegular !== undefined && hasLarge !== undefined;
@@ -44,9 +47,42 @@ const menuCollection = menuboards.map((m) => {
 
   return content;
 });
+
+const submenu = menuCollection
+  .map((m) => {
+    return m.board.map((z) => ({
+      title: z.title,
+      slug: z.slug,
+    }));
+  })
+  .flat();
+
+const config = await getEntry('config', 'config');
 ---
 
-<Layout title={menu?.data.title}>
-  <div set:html={menu?.rendered.html} />
+<Menu title={menu?.data.title} slug={menu.slug}>
+  <div slot="preamble" set:html={menu?.rendered.html} />
+
+  <Submenu
+    menu={submenu}
+    title={{
+      title: menu?.data.title,
+      slug: menu?.slug,
+    }}
+    submenu={config?.data.submenu}
+    slot="menu"
+    client:load
+  />
+
   {menuCollection.map((m) => <Menuboard item={m} />)}
-</Layout>
+</Menu>
+
+<style lang="scss">
+  :global(section.container) :global(:target) {
+    scroll-margin-block-start: 4.5rem;
+
+    @media (min-width: 800px) {
+      scroll-margin-block-start: 1rem;
+    }
+  }
+</style>

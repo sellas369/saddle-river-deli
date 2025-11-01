@@ -269,3 +269,5 @@ collections:
       - label: Disclaimer
         name: disclaimer
         widget: text
+      - label: Mobile Submenu
+        name: submenu

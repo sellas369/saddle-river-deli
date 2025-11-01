@@ -43,7 +43,7 @@
   };
 </script>
 
-<section>
+<section id={menu.slug}>
   <h2>{data.title}</h2>
   {#if rendered?.html}
     <div class="type">
@@ -87,22 +87,24 @@
 </section>
 
 <style lang="scss">
+  section:first-child h2 {
+    @media (min-width: 800px) {
+      margin-block-start: 0;
+    }
+  }
+
   .list,
   .prices {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
     gap: 1rem;
 
     :not(.bonus) li,
     :not(.extras) li {
       text-align: center;
-    }
-
-    > :last-child:nth-child(odd) {
-      grid-column: 1 / -1;
     }
   }
 
@@ -143,8 +145,12 @@
     border: 1px solid black;
     // padding: 1rem;
     display: grid;
-    gap: 1rem;
+    // gap: 1rem;
     grid-template-rows: min-content 1fr auto;
+
+    > *:not(:first-child) {
+      margin-top: 1rem;
+    }
 
     &:last-of-type:nth-of-type(odd) {
       grid-column: 1 / -1;
@@ -156,12 +162,20 @@
   }
 
   .prices {
-    grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11ch, 1fr));
     column-gap: 0.5rem;
     row-gap: 0.5rem;
     align-items: center;
     text-align: center;
     font-weight: bold;
+    container-type: inline-size;
+
+    li:last-child:nth-child(3n) {
+      grid-column: 1 / -1;
+      @container (min-width: calc(33ch + 1rem)) {
+        grid-column: unset;
+      }
+    }
   }
 
   .bonus {
@@ -194,5 +208,8 @@
     &:not(:has(.minimum)) {
       padding-block-end: 1rem;
     }
+  }
+  h2 + .type {
+    margin-block-start: -1rem;
   }
 </style>
