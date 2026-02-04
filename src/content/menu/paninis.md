@@ -9,7 +9,7 @@ items:
   - name: ITALIANO (Grilled Chicken, Roasted Peppers Sliced Mozzarella & Pesto Sauce)
     regular: 12.25
     large: null
-  - name: Chicken Fajita (Grilled Chicken, Cheddar, Roasted Peppers, Onions & Fajita Sauce)
+  - name: Chicken Fajita (Grilled Chicken, Any Cheese, Roasted Peppers, Onions & Fajita Sauce)
     regular: 12.25
     large: null
   - name: Grilled Chicken (Grilled Chicken & Grilled Veggies)
