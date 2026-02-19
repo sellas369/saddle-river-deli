@@ -15,7 +15,7 @@ items:
   - name: Grilled Chicken (Grilled Chicken & Grilled Veggies)
     regular: 12.25
     large: null
-  - name: Cajun Chicken (Cajun-Spiced Chicken, Lettuce & Tomato, with Your Choice of Cheese)
+  - name: Cajun Chicken (Cajun-Spiced Chicken  with Your Choice of Cheese)
     regular: 12.25
     large: null
   - name: Tuna Melt (Fresh Tuna, Cheddar Cheese, Lettuce & Tomato)
