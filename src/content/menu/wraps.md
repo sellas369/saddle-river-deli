@@ -10,7 +10,7 @@ items:
     regular: 12.25
     large: null
   - name: GREEK WITHOUT CHICKEN (Greek Salad, Feta Cheese, PITTED Black Kalamata Olives)
-    regular: 10.95
+    regular: 9.95
     large: null
   - name: GRILLED CHICKEN CAESAR (Grilled Chicken, Shredded Parmesan & Caesar Dressing)
     regular: 12.25
