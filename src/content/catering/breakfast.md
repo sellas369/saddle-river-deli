@@ -35,7 +35,7 @@ options:
       - title: Coffee, Tea, and Juice (per person)
         cost: 2.5
   - title: The Ultimate Breakfast
-    description: Scrambled eggs, bacon, sausage, home fries, French toast, fruit trays, bagels, rolls, Danishes, butter, cream cheeses, jelly, coffee, tea and juices
+    description: Scrambled eggs, bacon, sausage, home fries, French toast, fresh/hand-held fruit, bagels, Danishes, butter, cream cheeses, jelly, coffee and juice/s
     price:
       servings:
         - cost: 14.99
