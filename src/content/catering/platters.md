@@ -139,11 +139,11 @@ options:
           platter: true
       minimum: ''
     extras: []
-  - title: Heroes 2-6 Ft.
+  - title: Heroes BY THE FOOT
     description: Our heroes are for any occasion and made with your selection of Cold Cuts. Feeds 5 people per foot.
     price:
       servings:
-        - cost: 16.95
+        - cost: 17.95
           title: per foot
           platter: false
       minimum: ''
