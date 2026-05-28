@@ -49,11 +49,10 @@ menu:
       - Glazed baby Carrots
       - Red Roasted Potatoes
       - Steamed Broccoli
-      - Garden Vegetable Risotto
+      - Garden Vegetable & Rice (White or Yellow)
       - Vegetable Medley
       - Baked Potato
 ---
-
 **Perfect for Baby Showers, Bridal Showers, Communions, Weddings, Anniversaries, or Birthday Parties**.
 
 Buffets are served with an assortment of bread and rolls.
