@@ -33,7 +33,7 @@ items:
   - name: Eggplant Parmigiana (Fried Eggplant, Sliced Mozzarella, Marinara Sauce & Parmesan Cheese)
     regular: 12.25
     large: null
-  - name: Delightful (Fresh Honey Glazed Turkey, Swiss Cheese, Cole Slaw & Honey Mustard)
+  - name: Delightful (Oven Gold Turkey, Swiss Cheese, Cole Slaw & Honey Mustard)
     regular: 12.25
     large: null
 ---
