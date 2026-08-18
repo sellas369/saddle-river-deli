@@ -16,7 +16,7 @@ items:
     regular: 5
     large: null
   - name: American, Swiss, Cheddar, Provolone, Pepper Jack
-    regular: 0.7
+    regular: 0.75
     large: null
   - name: Fresh Mozzarella Cheese & Other Specialty Cheeses
     regular: 3
@@ -25,10 +25,10 @@ items:
     regular: 2
     large: null
   - name: Tomato
-    regular: 0.7
+    regular: 0.75
     large: null
   - name: Onions
-    regular: 0.7
+    regular: 0.75
     large: null
 ---
 
