@@ -13,7 +13,7 @@ items:
     regular: 6
     large: null
   - name: Egg, Cheese & Meat (American, Swiss or Cheddar, Bacon, Ham, Sausage, Taylor Ham or Turkey Bacon)
-    regular: 7
+    regular: 7.49
     large: null
   - name: Hobo Wrap (2 Eggs, Home Fries, Cheese, Onions & Bacon or Ham or Sausage Patty)
     regular: 7.95
