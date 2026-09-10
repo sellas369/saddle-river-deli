@@ -55,6 +55,4 @@ menu:
 ---
 **Perfect for Baby Showers, Bridal Showers, Communions, Weddings, Anniversaries, or Birthday Parties**.
 
-Buffets are served with an assortment of bread and rolls.
-
 Want something else? Inquire to create your own buffet, including Seafood dishes, Filet Mignon, Prime Rib, and many more!
