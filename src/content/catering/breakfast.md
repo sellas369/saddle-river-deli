@@ -24,7 +24,7 @@ options:
       - title: Coffee, Tea, and Juice (per person)
         cost: 2.5
   - title: American
-    description: Fruit tray, assorted breakfast wraps, French toast, home fries, bagels, rolls, Danishes, muffins with assorted cream cheeses and butter
+    description: Fresh Fruit, assorted breakfast wraps, French toast, home fries, bagels, rolls, Danishes, muffins with assorted cream cheeses and butter
     price:
       servings:
         - cost: 9.99
@@ -35,7 +35,7 @@ options:
       - title: Coffee, Tea, and Juice (per person)
         cost: 2.5
   - title: The Ultimate Breakfast
-    description: Scrambled eggs, bacon, sausage, home fries, French toast, fresh/hand-held fruit, bagels, Danishes, butter, cream cheeses, jelly, coffee and juice/s
+    description: Scrambled eggs, bacon, sausage, home fries, French toast, fresh and, or, hand-held fruit, bagels, Danishes, butter, cream cheeses, jelly, coffee and juice/s
     price:
       servings:
         - cost: 14.99
