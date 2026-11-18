@@ -2,7 +2,7 @@
 title: Breakfast
 options:
   - title: Eye Opener
-    description: Bagels with cream cheese, butter and jelly, assorted Danishes and muffins, croissants, crumb cakes
+    description: Bagels with cream cheese, butter and jelly, assorted Danish and muffins, croissants...
     price:
       servings:
         - cost: 7
@@ -11,7 +11,7 @@ options:
       minimum: ''
     extras:
       - title: Coffee, Tea, and Juice (per person)
-        cost: 2.5
+        cost: 2.75
   - title: Bagel – Croissant Platter
     description: Freshly baked assortment of bagels, muffins and croissants served with an assortment of cream cheeses, jelly and butter
     price:
@@ -22,9 +22,9 @@ options:
       minimum: ''
     extras:
       - title: Coffee, Tea, and Juice (per person)
-        cost: 2.5
+        cost: 2.75
   - title: American
-    description: Fresh Fruit, assorted breakfast wraps, French toast, home fries, bagels, rolls, Danishes, muffins with assorted cream cheeses and butter
+    description: Fresh Fruit, assorted breakfast wraps, French toast, home fries, bagels, Danishes, muffins with assorted cream cheeses and butter
     price:
       servings:
         - cost: 9.99
@@ -33,7 +33,7 @@ options:
       minimum: ''
     extras:
       - title: Coffee, Tea, and Juice (per person)
-        cost: 2.5
+        cost: 2.75
   - title: The Ultimate Breakfast
     description: Scrambled eggs, bacon, sausage, home fries, French toast, fresh and, or, hand-held fruit, bagels, Danishes, butter, cream cheeses, jelly, coffee and juice/s
     price:
@@ -44,7 +44,7 @@ options:
       minimum: ''
     extras: []
   - title: Early Riser
-    description: Fresh fruit salad, scrambled eggs, bacon, sausage, home fries, bagels, assorted rolls, Danishes, butter, cream cheeses, jelly and juice
+    description: Fresh fruit salad, scrambled eggs, bacon, sausage, home fries, bagels, Danish, butter, cream cheeses, jelly and juice
     price:
       servings:
         - cost: 11.99
@@ -53,7 +53,7 @@ options:
       minimum: ''
     extras:
       - title: Coffee and Tea (per person)
-        cost: 1.5
+        cost: 2.75
   - title: Bagels & Muffin Platter
     description: Assorted bagels and muffins served with butter, assorted cream cheeses and jellies
     price:
@@ -63,8 +63,8 @@ options:
           platter: false
       minimum: ''
     extras:
-      - title: Coffee, Tea, and Juice (per person)
-        cost: 2.5
+      - title: Coffee or tea or Juice (per person)
+        cost: 2.75
 weight: 0
 ---
 
